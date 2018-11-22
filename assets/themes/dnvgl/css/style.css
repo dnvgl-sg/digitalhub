@@ -1,0 +1,1091 @@
+
+/*///////////////////// STYLESHEET FOR THE DATA ANALYTICS PROMOTIONAL SITE //////////////////////*/
+/*************************** EDITED BY J. MATTHESON 5/2018 *******************************/
+/*
+CONTENTS:
+--------------------------
+    1) Global Styles
+    2) Typography
+    3) Helper Classes
+    4) Header
+    5) Navigation
+    6) Jumbotron
+    7) Page Header Area
+    8) Containers
+    9) Page Layout
+    10) Homepage
+    11) About page
+    12) Our Products page
+    13) Portfolio page
+    14) Pricing: Tables
+    15) Modal Windows
+    16) Footer
+*/
+
+/*/////////////////////////////////// 1) GLOBAL STYLES ///////////////////////////////////*/
+
+body {
+    color: #444;
+    padding-bottom: 0;
+}
+
+img {
+    margin-bottom: 15px;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+/*/////////////////////////////////// 2) TYPOGRAPHY ///////////////////////////////////*/
+
+h2 {
+    margin: 0 0 1.75rem;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+a {
+    color: #0067c5;
+}
+
+a:hover, a:focus {
+    color: #0067c5;
+    text-decoration: none;
+}
+
+a:focus {
+    box-shadow: none;
+}
+
+hr {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+/******************* Font-weight 600 *******************/
+
+.fw-600 {
+    font-weight: 600;
+}
+
+/******************* Circle Numbered List *******************/
+
+ul.circle-numbers {
+    list-style-type: none;
+    padding-left: 25px;
+}
+
+.circle-numbers li {
+    font-size: 20px;
+}
+
+.circle-numbers li a {
+    color: #000;
+}
+
+.circle-numbers span {
+    background-color: #63b338;
+    width: 38px;
+    height: 38px;
+    border-radius: 100%;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1.9;
+    margin: 20px 15px 0 0;
+}
+
+
+/******************* Normal Bulleted List *******************/
+
+ul.normal-bullet {
+    margin-top: 10px;
+    padding-left: 70px;
+}
+
+ul.normal-bullet li {
+    margin-bottom: 5px;
+    list-style-type: disc;
+}
+
+
+/*/////////////////////////////////// 3) HELPER CLASSES ///////////////////////////////////*/
+
+/******************* Indent *******************/
+.indent {
+    position: relative;
+    left: 36px;
+}
+
+@media (max-width: 767px) {
+    .indent {
+        margin-left: 0;
+    }
+}
+
+/******************* Alert Text *******************/
+
+.alert-text, .alert-text a {
+    color: #d51f28;
+}
+
+.alert-text a {
+    text-decoration: underline;
+}
+
+
+/******************* Shadow *******************/
+.shadow {
+    -webkit-box-shadow: 1px 2px 6px 0px rgba(84,84,84,0.45);
+    -moz-box-shadow: 1px 2px 6px 0px rgba(84,84,84,0.45);
+    box-shadow: 1px 2px 6px 0px rgba(84,84,84,0.45);
+}
+
+
+/******************* Hover: Lighten Opacity *******************/
+
+.hover-opacity:hover,
+.hover-opacity:focus {
+    opacity: 0.65;
+    cursor: pointer;
+}
+
+.hover-opacity {
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+}
+
+
+/******************* Hover: Lighten Opacity *******************/
+
+.hover:hover,
+.hover:focus {
+    cursor: pointer;
+}
+
+
+/******************* 20% Width *******************/
+
+.twenty-p {
+    width: 20%;
+    float: left;
+}
+
+@media (max-width: 991px) {
+    .twenty-p {
+        width: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+    .twenty-p {
+        width: 100%;
+    }
+}
+
+
+/******************* Anchor Tag Offset *******************/
+
+:target:before {
+    content:"";
+    display:block;
+    height:90px; /* fixed header height*/
+    margin:-90px 0 0; /* negative fixed header height */
+}
+
+
+
+
+/*/////////////////////////////////// 4) HEADER ///////////////////////////////////*/
+
+header {
+    height: 120px;
+}
+
+/******************* Logo *******************/
+
+/* Logo container */
+.logo-area {
+    width: 500px;
+    height: 70px;
+    position: absolute;
+    z-index: 10000;
+}
+
+/* Both logos */
+.dnv-gl-logo {
+    float: left;
+}
+
+/* Mobile logo */
+.dnv-gl-logo.mobile {
+    width: 140px;
+    padding-top: 7px;
+} 
+
+/******************* Responsive  *******************/
+
+/* Mobile & Tablet */
+@media (max-width: 991px) {
+    .logo-area {
+        width: 180px;
+        height: 50px;
+        top: -8px;
+    }
+
+    .dnv-gl-logo.desktop {
+        display: none;
+    } 
+
+    header {
+        height: 80px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .logo-area {
+        top: 10px;
+        left: 10px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+    .dnv-gl-logo.mobile {
+        display: none;
+    } 
+}
+
+
+
+/*/////////////////////////////////// 5) NAVIGATION ///////////////////////////////////*/
+
+
+/******************* Menu Container *******************/
+.navbar-inverse {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.navbar-inverse .navbar-collapse {
+    border-color: transparent;
+}
+
+.navbar-nav {
+    float: right;
+    padding-top: 10px;
+}
+
+/* Mobile Menu Button */
+.navbar-toggle {
+    margin: 15px;
+    background-color: navy;
+    border-radius: 0;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    min-width: 200px;
+    padding: 10px 0;
+}
+
+.dropdown-menu > li > a {
+    padding: 10px 20px;
+}
+
+.navbar-inverse .navbar-nav>.open>a, 
+.navbar-inverse .navbar-nav>.open>a:focus, 
+.navbar-inverse .navbar-nav>.open>a:hover {
+    color: #000;
+    background-color: #f9f9f9;
+}
+
+
+/******************* Menu items *******************/
+
+/* All menu items */
+.navbar-inverse .navbar-nav > li > a,
+.navbar-inverse .navbar-nav > li > a:focus, 
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #000;
+    font-size: 17px;
+}
+
+/* Active menu item */
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .active > a:focus, 
+.navbar-inverse .navbar-nav > .active > a:hover {
+    color: #000;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.navbar-inverse .navbar-nav > .active > a:focus, 
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus, 
+.navbar-inverse .navbar-nav > li > a:hover {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+
+/******************* Responsive *******************/
+
+/* Mobile & Tablet */
+@media (max-width: 991px) {
+    .navbar {
+        box-shadow: none;
+    }
+
+    .navbar-nav {
+        position: relative;
+        left: 30px;
+    }
+
+    .nav > li > a {
+        padding: 10px 10px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .navbar-wrapper .navbar {
+        background-color: #fff;
+    }
+
+    .navbar-nav {
+        float: none;
+        left: 0;
+    }
+
+    .navbar-wrapper .navbar {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .navbar-nav > li {
+        padding: 0 0;
+    }
+}
+
+
+
+/*/////////////////////////////////// 6) JUMBOTRON ///////////////////////////////////*/
+
+/******************* Jumbotron body *******************/
+.jumbotron {
+    height: 420px;
+    background: linear-gradient(rgba(136, 169, 226, 0.3), rgba(136, 224, 245, 0.2)), 
+    url(../img/jumbotron.jpg);
+    background-repeat: no-repeat;
+    margin-bottom: 15px;
+}
+
+/******************* Jumbotron text *******************/
+.jumbotron h1, .jumbotron h2 {
+    padding: 0 13px;
+    color: #fff;
+}
+
+.jumbotron h1 {
+    font-size: 42px;
+    margin-top: 15%;
+    line-height: 1.35;
+    text-shadow: 2px 2px 3px rgba(150, 150, 150, 0.35);
+}
+
+.jumbotron h2 {
+    font-size: 45px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+@media (max-width: 767px) {
+    .jumbotron {
+        height: 250px;
+    }
+
+    .jumbotron h1 {
+        font-size: 23px;
+        margin-top: 16%;
+        padding: 0;
+    }
+
+    .jumbotron h2 {
+        font-size: 24px;
+        padding: 0;
+    }
+}
+
+/*/////////////////////////////////// 7) PAGE HEADER AREA ///////////////////////////////////*/
+
+/******************* Header body *******************/
+.header-area {
+    height: 275px;
+    background: linear-gradient(rgba(0, 159, 218, 0.5), rgba(0, 159, 218, 0.5)), 
+    url(../img/header.jpg);
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+    background-color: #eee;
+}
+
+/******************* Header text & Horizontal rule *******************/
+.header-area h1 {
+    font-size: 35px;
+    font-weight: 600;
+    margin-top: 15%;
+    color: #fff;
+    line-height: 1.4;
+}
+
+.subtitle {
+    color: #fff;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 0 6px;
+}
+
+
+/******************* Responsive *******************/
+
+/* Mobile & Tablet */
+@media (max-width: 991px) {
+    .header-area {
+        height: 150px;
+    }
+
+    .header-area h1 {
+        margin-top: 10%;
+    }
+}
+
+/* Mobile & Tablet */
+@media (max-width: 767px) {
+    .header-area {
+        height: 80px;
+        margin-bottom: 0;
+    }
+
+    .header-area h1 {
+        margin-top: 28px;
+        font-size: 26px;
+    }
+}
+
+/*//////////////////////////////////// 8) CONTAINERS ///////////////////////////////////*/
+
+
+/* Responsive */
+@media (min-width: 1200px) {
+    .container {
+        width: 1195px;
+    }
+}
+
+
+.white-box {
+    border: 8px solid #fff;
+    padding: 12px;
+    margin: 6px;
+}
+
+.white-box:hover, .white-box:focus {
+    border: 8px solid #eee;
+    background-color: #eee;
+}
+
+
+/*/////////////////////////////////// 9) PAGE LAYOUT ///////////////////////////////////*/
+
+/* Page Body */
+.page-body {
+    padding: 40px 15px 100px;
+}
+
+
+/******************* Odd and Even Page Sections (alternating white & grey) *******************/
+
+.odd-section, .even-section {
+    margin: 0;
+    padding: 55px 0 65px;
+}
+
+.odd-section {
+    background-color: #fff;
+}
+
+.even-section {
+    background-color: #f7f7f7;
+}
+
+/* Bottom Section */
+.bottom {
+    padding: 55px 0 100px; 
+}
+
+/* Top Section */
+.top {
+    padding: 40px 0 55px;
+}
+
+
+
+/*/////////////////////////////////// 10) HOMEPAGE ///////////////////////////////////*/
+
+/******************* Section 1 - Intro *******************/
+
+/* Text Blocks */
+.block {
+    padding: 25px 30px 40px;
+    margin-top: 30px;
+    margin-bottom: 0;
+    -webkit-box-shadow: 1px 2px 6px 0px rgba(84,84,84,0.45);
+    -moz-box-shadow: 1px 2px 6px 0px rgba(84,84,84,0.45);
+    box-shadow: 1px 2px 6px 0px rgba(84,84,84,0.45);
+}
+
+.bg-neutral-10 {
+    background-color: #f9f9f9 !important;
+}
+
+/* Icons */
+.services-icon {
+    margin: 0 auto;
+    display: block;
+    max-width: 55px;
+    opacity: 0.9;
+}
+
+
+/* Text */
+.block h3 {
+    text-align: center;
+    margin: 10px 0 .75rem;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .block {
+        height: 310px;
+    }
+}
+
+@media (min-width: 992px) {
+    .block {
+        height: 285px;
+    }
+
+    .services-pg img {
+        margin-bottom: 0;
+    }
+}
+
+
+/******************* Section 2 - Our Services *******************/
+
+.services .white-box {
+    height: 190px;
+}
+
+.white-box img {
+    margin: 13px auto 15px;
+    max-width: 50px;
+    display: block;
+}
+
+.white-box h4 {
+    margin-top: 10px;
+    color: #000;
+}
+
+
+
+/******************* Section 3 - Security Standards *******************/
+
+/* List items */
+.security li {
+    line-height: 3.5;
+    font-size: 18px;
+    list-style-type: none;
+}
+
+/* Checkmarks */
+.security .glyphicon {
+    margin-right: 20px; 
+    color: #33b2e1;
+}
+
+/* Image */
+.security img {
+    max-width: 150px;
+    float: right;
+    margin: 10px 40px 0 0;
+}
+
+@media (max-width: 767px) {
+    .security img {
+        float: none;
+        margin: 0 auto 10px;
+    }
+}
+
+
+
+/******************* Section 4 - Examples of Our Offerings *******************/
+
+/*********** Carousel body ***********/
+.carousel {
+    margin-bottom: 0;
+}
+
+/*********** Carousel Controls - Left & Right ***********/
+.carousel-control {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 20px;
+    opacity: 0.7;
+    font-size: 20px;
+    color: #ccc;
+    text-align: center;
+    text-shadow: none;
+    background-color: transparent;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+    background-image: none;
+}
+
+.carousel-control:hover, 
+.carousel-control:focus {
+    opacity: 1;
+    color: #ccc;
+}
+
+/*********** Carousel Controls - Bottom ***********/
+
+.carousel-indicators {
+    bottom: -10px;
+}
+
+.carousel-indicators li {
+    border: 2px solid #ccc;
+    width: 12px;
+    height: 12px;
+    border-radius: 12px;
+}
+
+/* Active Circle */
+.carousel-indicators li.active {
+    border: 2px solid #ccc;
+    background-color: #eee;
+    width: 14px;
+    height: 14px;
+    border-radius: 14px;
+}
+
+/*********** Carousel items ***********/
+.carousel .item {
+    background-color: transparent;
+    padding: 0 30px;
+}
+
+.item a {
+    color: #000;
+}
+
+
+/*********** Responsive ***********/
+
+@media (max-width: 991px) {
+    .portfolio .carousel .item, 
+    .portfolio .carousel {
+        height: 320px;
+    }
+}
+
+@media (max-width: 767px) {
+    .portfolio .carousel .item, 
+    .portfolio .carousel {
+        height: 240px;
+    }
+
+    .carousel-caption p {
+        text-align: left;
+    }
+}
+
+
+
+/******************* Section 5 - Contact us *******************/
+
+ul.contact-us {
+    padding-left: 0;
+}
+
+.contact-us li {
+    list-style-type: none;
+    line-height: 2.8;
+}
+
+
+@media (max-width: 991px) {
+    .contact-pic, .contact h3 {
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+    }
+}
+
+@media (min-width: 992px) {
+    .contact-pic {
+        padding-right: 25px;
+    }
+}
+
+
+/*/////////////////////////////////// 11) ABOUT PAGE ///////////////////////////////////*/
+
+/******************* Team member block area *******************/
+
+/* Outer Block */
+.team-member .col-md-3 {
+    padding: 0 20px 35px;
+}
+
+/* Team Member block */
+.team-member .profile {
+    padding: 20px 25px 30px;
+    height: 380px;
+    margin-bottom: 30px;
+    background-color: #f9f9f9;
+    -webkit-box-shadow: 1px 2px 6px 0px rgba(84,84,84,0.45);
+    -moz-box-shadow: 1px 2px 6px 0px rgba(84,84,84,0.45);
+    box-shadow: 1px 2px 6px 0px rgba(84,84,84,0.45);
+}
+
+/* Team member picture */
+.team-member img {
+    width: 150px;
+    border: 3px solid #fff;
+    box-sizing: initial;
+    margin: 0 auto;
+    display: block;
+    border-radius: 7px;
+}
+
+/* Title Text */ 
+.team-member h3 {
+    margin: 8px 0;
+    font-size: 18px;
+    border-bottom: 1px solid #66c5e9;
+}
+
+/* Bio text */
+.team-member p {
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+/* Bio Button */ 
+.button {
+    background-color: #64b7d9;
+    padding: 6px 10px;
+    border-radius: 3px;
+    margin: 20px 0 0;
+    display: block;
+    width: 100%;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+}
+
+.button:hover, .button:focus {
+    background-color: #1f51a8;
+}
+
+.button a:hover, .button a:focus {
+    text-decoration: none;
+}
+
+
+
+/*/////////////////////////////////// 12) OUR SERVICES PAGE ///////////////////////////////////*/
+
+/* List Items */
+.services-pg li {
+    line-height: 1.75;
+    list-style-type: none;
+    margin-bottom: 25px;
+}
+
+/* Checkmarks */
+.services-pg .glyphicon {
+    color: #33b2e1;
+    margin-right: 20px;
+}
+
+@media (max-width: 767px) {
+    ul.services-pg {
+        padding-left: 0;
+    }
+}
+
+/*/////////////////////////////////// 13) PRODUCT EXAMPLES PAGE ///////////////////////////////////*/
+
+.portfolio-pg .row {
+    padding-bottom: 75px;
+}
+
+
+/* Portfolio Images */
+.portfolio-pg img {
+    z-index: -1;
+    margin: 0 auto;
+    max-width: 1000px;
+    width: 100%;
+}
+
+/* Caption Text */
+.portfolio-pg h3, .portfolio-pg p { 
+    text-align: center;
+}
+
+.portfolio-pg h3 {
+    margin-top: 0;
+}
+
+.portfolio-pg p {
+    margin-bottom: 30px;
+    font-size: 17px;
+}
+
+
+
+/******************* Portfolio Item: Hover *******************/
+
+.portfolio-item {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 10px auto 25px;
+}
+
+.detail-overlay {
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    background-image: url(../img/plus.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: rgba(255, 255, 255, 0.55);
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+    position: absolute;
+}
+
+.detail-overlay:hover {
+    opacity: 1;
+}
+
+
+/*/////////////////////////////////// 14) PRICING: TABLES ///////////////////////////////////*/
+
+/* Table Body */
+table.pricing {
+    width: 100%;
+    margin: 35px 0 60px;
+}
+
+/* Table Data */
+.pricing td, .pricing th {
+    border: 1px solid #bbb;
+    font-size: 16px;
+    color: #000;
+}
+
+/* Header Row */
+.pricing th {
+    background-color: #97d7f1;
+    border: 1px solid #7abbd5;
+    text-align: center;
+    padding: 5px;
+    width: 33%;
+    font-size: 1.05rem;
+}
+
+.pricing h4 {
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+/* Header Row - Primary */
+.pricing th.primary {
+    background-color: #0098ce;
+    border: 1px solid #0098ce;
+    padding: 7px 5px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 22px;
+    letter-spacing: 0.05px;
+}
+
+/* Header Row - Secondary */
+.pricing td.secondary {
+    background-color: #ddf0f8;
+    border: 1px solid #92b4c1;
+    padding: 7px 5px;
+    font-size: 1.05rem;
+}
+
+/* Table Text */
+.pricing td {
+    padding: 12px 12px 30px;
+    vertical-align: top;
+}
+
+.alert.alert-danger a {
+    color: #941c22;
+    text-decoration: underline;
+}
+
+table li {
+    margin: 5px 0 10px;
+}
+
+
+/********** Responsive **********/
+
+@media (min-width: 768px) {
+    th.mobile-only {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    table, th, td, tr { 
+        display: block; 
+    }
+
+    .pricing {
+        border: 1px solid #d5d5d5; 
+    }
+
+    /* Header Rows: Hidden */
+    .pricing th { 
+        display: none;
+    }
+
+    th.mobile-only {
+        display: block;
+        width: 100%;
+        background-color: #ddf0f8;
+        font-weight: normal;
+    }
+
+    /* Table rows & data*/
+    .pricing tr, table.basic tr {
+        border: none; 
+    }
+
+    /* Behave  like a "row" */
+    .pricing tr td {     
+        border: none;
+        border-bottom: 1px solid #d5d5d5; 
+    }
+
+    .pricing td.secondary {
+        background-color: #97d7f1;
+        border: 1px solid #7abbd5;
+        font-weight: 600;
+    }    
+}
+
+
+/*/////////////////////////////////// 15) MODAL WINDOWS ///////////////////////////////////*/
+
+.modal-body {
+    padding: 20px 20px 25px;
+}
+
+.modal-content img {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.modal-content {
+    border-radius: 7px;
+}
+
+/* Large Modal */
+@media (min-width: 992px) {
+    .modal-lg {
+        width: 1300px;
+    }
+
+    .vertical {
+        max-width: 800px;
+        margin: 10px auto;
+    }
+}
+
+
+
+/*/////////////////////////////////// 16) FOOTER ///////////////////////////////////*/
+
+/* Footer Body */
+footer {
+    height: 200px;
+}
+
+/* "Back to top" Button */
+footer .pull-right a {
+    background-color: #eee;
+    padding: 5px 35px;
+    margin-top: 5px;
+    display: block;
+    color: #777;
+    -webkit-box-shadow: 1px 1px 3px 0px rgba(84,84,84,0.45);
+    -moz-box-shadow: 1px 1px 3px 0px rgba(84,84,84,0.45);
+    box-shadow: 1px 1px 3px 0px rgba(84,84,84,0.45);
+}
+
+footer .pull-right a:hover,
+footer .pull-right a:focus {
+    background-color: #eee;
+    text-decoration: none;
+    -webkit-box-shadow: 2px 2px 7px 0px rgba(84,84,84,0.45);
+    -moz-box-shadow: 2px 2px 7px 0px rgba(84,84,84,0.45);
+    box-shadow: 2px 2px 7px 0px rgba(84,84,84,0.45);
+}
+
+footer .glyphicon {
+    top: 2px;
+    font-size: 14px;
+    margin-right: 12px;
+}
+
+
+
