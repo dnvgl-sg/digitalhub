@@ -1,0 +1,308 @@
+
+<div id="glFullscreen">
+  <canvas id="example"></canvas>
+</div>
+<div id="dat">
+
+</div>
+<div id="info">
+  Digital Twin - Lifts
+  <div id="feedback"></div>
+</div>
+
+<script src="{{ ASSET_PATH }}/themes/dnvgl/js/three.min.js"></script>
+<script src="{{ ASSET_PATH }}/themes/dnvgl/js/DragControls.js"></script>
+<script src="{{ ASSET_PATH }}/themes/dnvgl/js/mqttws.min.js"></script>
+<script src="{{ ASSET_PATH }}/themes/dnvgl/js/TrackballControls.js"></script>
+<script src="{{ ASSET_PATH }}/themes/dnvgl/js/MTLLoader.js"></script>
+<script src="{{ ASSET_PATH }}/themes/dnvgl/js/dat.gui.min.js"></script>
+
+<script src="{{ ASSET_PATH }}/themes/dnvgl/js/LoaderSupport.js"></script>
+<script src="{{ ASSET_PATH }}/themes/dnvgl/js/OBJLoader2.js"></script>
+<script>
+
+  'use strict';
+  var LIFT_NUM = 13;
+  var LIFT_DISTANCE = 100;
+
+  var OBJLoader2Example = (function () {
+
+    var Validator = THREE.LoaderSupport.Validator;
+
+    function OBJLoader2Example( elementToBindTo ) {
+      this.renderer = null;
+      this.canvas = elementToBindTo;
+      this.aspectRatio = 1;
+      this.lifts = [];
+      this.lift_floor = [];
+      this.lift_position = [];
+      this.toDrag = [];
+      this.abnormalLifts = [];
+      this.movingLift = -1;
+      this.movingTo = -1;
+      this.recalcAspectRatio();
+      this.mqtt = new Paho.MQTT.Client('broker.hivemq.com', 8000, 'clientid');
+      this.yellowAlertLift = -1;
+      this.redAlertLift = -1;
+
+      function onConnectionLost(responseObject) {
+        if (responseObject.errorCode !== 0) {
+          console.log("onConnectionLost:"+responseObject.errorMessage);
+        }
+      }
+
+      function onMessageArrived(message) {
+        console.log("onMessageArrived:"+message.payloadString);
+      }
+      var scope = this;
+      function onConnect() {
+        // Once a connection has been made, make a subscription and send a message.
+        console.log("onConnect");
+      }
+
+      this.mqtt.onConnectionLost = onConnectionLost;
+      this.mqtt.onMessageArrived = onMessageArrived;
+      var options = {
+        timeout: 3,
+        onSuccess: onConnect
+      };
+      this.mqtt.connect(options);
+
+      this.scene = null;
+      this.cameraDefaults = {
+        posCamera: new THREE.Vector3( 0.0, 175.0, 500.0 ),
+        posCameraTarget: new THREE.Vector3( 0, 0, 0 ),
+        near: 0.1,
+        far: 10000,
+        fov: 45
+      };
+      this.camera = null;
+      this.cameraTarget = this.cameraDefaults.posCameraTarget;
+
+      this.controls = null;
+
+      for (var i = 0; i < LIFT_NUM; i++) {
+        this.lift_floor.push(0);
+        this.lift_position.push(0);
+      }
+    }
+
+    OBJLoader2Example.prototype.initGL = function () {
+      this.renderer = new THREE.WebGLRenderer( {
+        canvas: this.canvas,
+        antialias: true,
+        autoClear: true
+      } );
+      this.renderer.setClearColor( 0x050505 );
+
+      this.scene = new THREE.Scene();
+
+      this.camera = new THREE.PerspectiveCamera( this.cameraDefaults.fov, this.aspectRatio, this.cameraDefaults.near, this.cameraDefaults.far );
+      this.resetCamera();
+      this.controls = new THREE.TrackballControls( this.camera, this.renderer.domElement );
+
+      var ambientLight = new THREE.AmbientLight( 0x404040 );
+      var directionalLight1 = new THREE.DirectionalLight( 0xC0C090 );
+      var directionalLight2 = new THREE.DirectionalLight( 0xC0C090 );
+
+      directionalLight1.position.set( -100, -50, 100 );
+      directionalLight2.position.set( 100, 50, -100 );
+
+      this.scene.add( directionalLight1 );
+      this.scene.add( directionalLight2 );
+      this.scene.add( ambientLight );
+
+      var helper = new THREE.GridHelper( 1200, 60, 0xFF4444, 0x404040 );
+      this.scene.add( helper );
+    };
+
+    OBJLoader2Example.prototype.initContent = function () {
+      var modelName = 'lift_model_';
+      this._reportProgress( { detail: { text: 'Loading: ' + modelName } } );
+
+      var scope = this;
+      var objLoader = new THREE.OBJLoader2();
+      var callbackOnLoad = function ( event ) {
+        event.detail.loaderRootNode.scale.set(0.05,0.05,0.05);
+        //scope.scene.add( event.detail.loaderRootNode );
+        for (var i = 0; i < LIFT_NUM; i++) {
+          console.log('Model #'  + i + ' is added.');
+          var clonedModel = event.detail.loaderRootNode.clone();
+          clonedModel.translateX(LIFT_DISTANCE*i - LIFT_DISTANCE*(LIFT_NUM-1)/2);
+          //console.log(clonedModel);
+          scope.scene.add(clonedModel);
+          scope.lifts.push(clonedModel);
+          var geometry = new THREE.BoxBufferGeometry( 30, 1, 30 );
+          var object = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { color: Math.random() * 0xffffff } ) );
+          object.translateX(LIFT_DISTANCE*i - LIFT_DISTANCE*(LIFT_NUM-1)/2);
+          object.translateY(45);
+          scope.scene.add(object);
+          scope.toDrag.push(object);
+        }
+
+        console.log( 'Loading complete: ' + event.detail.modelName );
+        scope._reportProgress( { detail: { text: '' } } );
+
+        var dragx = 0;
+        var dragliftidx = -1;
+        var dragControls = new THREE.DragControls(scope.toDrag, scope.camera, scope.renderer.domElement);
+        dragControls.addEventListener('dragstart', function(event) {
+          scope.controls.enabled = false;
+          dragx = event.object.position.x;
+          dragliftidx = (dragx + LIFT_DISTANCE*(LIFT_NUM-1)/2)/LIFT_DISTANCE;
+        });
+        dragControls.addEventListener('drag', function(event) {
+          console.log(event.object.position);
+          event.object.position.x = dragx;
+          event.object.position.z = 0;
+
+          var lift = scope.lifts[dragliftidx];
+          var deltay = event.object.position.y - lift.position.y - 45;
+          
+          if (deltay > 10) {
+            scope.sendRedAlert(dragliftidx);
+          }
+
+          lift.translateY(deltay);
+          scope.lift_position[dragliftidx] = scope.lift_position[dragliftidx] + deltay;
+        });
+        dragControls.addEventListener('dragend', function(event) {
+          scope.controls.enabled = true;
+          scope.sendYellowAlert(dragliftidx);
+          scope.abnormalLifts.push(dragliftidx);
+        });
+      };
+
+      var onLoadMtl = function ( materials ) {
+        objLoader.setModelName( modelName );
+        objLoader.setMaterials( materials );
+        objLoader.setLogging( true, true );
+        objLoader.load( 'models/lift_model.obj', callbackOnLoad, null, null, null, false );
+      };
+
+      objLoader.loadMtl( 'models/lift_model.obj.mtl', null, onLoadMtl );
+    };
+
+    OBJLoader2Example.prototype._reportProgress = function( event ) {
+      var output = Validator.verifyInput( event.detail.text, '' );
+      console.log( 'Progress: ' + output );
+      document.getElementById( 'feedback' ).innerHTML = output;
+    };
+
+    OBJLoader2Example.prototype.resizeDisplayGL = function () {
+      this.controls.handleResize();
+
+      this.recalcAspectRatio();
+      this.renderer.setSize( this.canvas.offsetWidth, this.canvas.offsetHeight, false );
+
+      this.updateCamera();
+    };
+
+    OBJLoader2Example.prototype.recalcAspectRatio = function () {
+      this.aspectRatio = ( this.canvas.offsetHeight === 0 ) ? 1 : this.canvas.offsetWidth / this.canvas.offsetHeight;
+    };
+
+    OBJLoader2Example.prototype.resetCamera = function () {
+      this.camera.position.copy( this.cameraDefaults.posCamera );
+      this.cameraTarget.copy( this.cameraDefaults.posCameraTarget );
+
+      this.updateCamera();
+    };
+
+    OBJLoader2Example.prototype.updateCamera = function () {
+      this.camera.aspect = this.aspectRatio;
+      this.camera.lookAt( this.cameraTarget );
+      this.camera.updateProjectionMatrix();
+    };
+
+    OBJLoader2Example.prototype.render = function () {
+      if ( ! this.renderer.autoClear ) this.renderer.clear();
+
+      function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      if (this.movingLift === -1) {
+        this.movingLift = getRandomInt(0, (LIFT_NUM - 1));
+        this.movingTo = getRandomInt(0, 8);
+        if (this.lifts.length === 0 || this.lift_floor[this.movingLift] === this.movingTo) {
+          this.movingLift = -1;
+          this.movingTo = -1;
+        }
+        if (this.movingLift !== -1 && this.abnormalLifts.includes(this.movingLift)) {
+          this.movingLift = -1;
+          this.movingTo = -1;
+        }
+      }
+      if (this.movingLift !== -1) {
+        var delta = (this.movingTo - this.lift_floor[this.movingLift]) > 0 ? 1 : -1;
+        var lift = this.lifts[this.movingLift];
+        //console.log('moving lift: ' + this.movingLift);
+        lift.translateY(delta);
+        var drag = this.toDrag[this.movingLift];
+        drag.translateY(delta);
+        this.lift_position[this.movingLift] = this.lift_position[this.movingLift] + delta;
+        if (this.lift_position[this.movingLift] === this.movingTo * 10) {
+          this.lift_floor[this.movingLift] = this.movingTo;
+          this.movingLift = -1;
+          this.movingTo = -1;
+        }
+      }
+      this.controls.update();
+      this.renderer.render( this.scene, this.camera );
+    };
+
+    OBJLoader2Example.prototype.onTimeout = function () {
+      console.log('onTimeout');
+      //this.mqtt.subscribe("test/sj/led");
+      var payload = {
+        positions: this.lift_position,
+        yellowAlert: this.yellowAlertLift,
+        redAlert: this.redAlertLift
+      }
+      var message = new Paho.MQTT.Message(JSON.stringify(payload));
+      message.destinationName = 'test/sj/digitaltwin';
+      this.mqtt.send(message);
+
+      this.yellowAlertLift = -1;
+      this.redAlertLift = -1;
+    };
+
+    OBJLoader2Example.prototype.sendYellowAlert = function(liftIdx) {
+      console.log('Yellow alert: wrong levelling: ' + liftIdx);
+      this.yellowAlertLift = liftIdx;
+    };
+
+    OBJLoader2Example.prototype.sendRedAlert = function(liftIdx) {
+      console.log('Red alert: over speed detected and wrong levelling: ' + liftIdx);
+      this.redAlertLift = liftIdx;
+    };
+
+    return OBJLoader2Example;
+
+  })();
+
+  var app = new OBJLoader2Example( document.getElementById( 'example' ) );
+
+  var resizeWindow = function () {
+    app.resizeDisplayGL();
+  };
+
+  var render = function () {
+    requestAnimationFrame( render );
+    app.render();
+  };
+
+  window.addEventListener( 'resize', resizeWindow, false );
+
+  console.log( 'Starting initialisation phase...' );
+  app.initGL();
+  app.resizeDisplayGL();
+  app.initContent();
+
+  setInterval(function(){ 
+    app.onTimeout();
+    }, 3000);
+
+  render();
+
+</script>

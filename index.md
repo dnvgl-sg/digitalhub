@@ -5,6 +5,9 @@ tagline: Easy websites with GitHub Pages
 description: Minimal tutorial on making a simple website with GitHub Pages
 ---
 
+### Lift 3D  
+Here is the demo of [Lift 3D](/lift3d)
+
 
 ### Digital Engagement
 
