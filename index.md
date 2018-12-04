@@ -6,7 +6,7 @@ description: Digital Hub Singapore
 ---
 
 ### Lift 3D  
-Here is the demo of [Lift 3D](/lift3d)
+Here is the demo of [Lift 3D](pages/lift3d)
 
 
 ### Digital Engagement
