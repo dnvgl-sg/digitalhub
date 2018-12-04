@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Digital Hub Singapore
-tagline: Easy websites with GitHub Pages
-description: Minimal tutorial on making a simple website with GitHub Pages
+tagline: Digital Hub Singapore with GitHub Pages
+description: Digital Hub Singapore
 ---
 
 ### Lift 3D  
