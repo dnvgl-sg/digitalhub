@@ -1,3 +1,6 @@
+---
+title: About us
+---
 ### What is DNVGL Digital Hub Singapore? 
 Focus area
 https://sg.channelasia.tech/article/646408/solution-provider-dnv-gl-launches-digital-hub-singapore/
