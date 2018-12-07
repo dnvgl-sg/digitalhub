@@ -1,3 +1,7 @@
+---
+title: Showcase
+---
+
 ### Smart Lift
 Text, charts and videos
 
