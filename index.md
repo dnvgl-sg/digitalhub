@@ -5,57 +5,12 @@ tagline: Digital Hub Singapore with GitHub Pages
 description: Digital Hub Singapore
 ---
 
-### Lift 3D  
-Here is the demo of [Lift 3D](pages/lift3d)
+Data is new currency for business. 
 
+DNV GL Digital Hub Singapore can help you to get business insights from the data.
 
-### Digital Engagement
+In order to get value from data, proper data aquisition, profiling, management, analytics and visulization will be needed. 
 
-Digital marketing campaigns, tailored web portals and interactive dashboards provide the tools needed to effectively manage modern engagement with your customers
+DNV GL Digital Hub Singapore can help on these areas. 
 
-### Operational Efficiency  
-& Cost Reduction
-
-Cutting-edge machine learning and modern data analytics can increase efficiency across your entire organization
-
-### Customer Experience
-
-User-centric design and execution lead to the best outcomes for your customers
-
-
-### Market Segmentation
-
-Explore your markets in new ways with advanced segmentation and visualization technologies
-
-
-### Propensity Modeling
-
-Understand and influence your customers in new ways with propensity-to-act models that illuminate cause-effect relationships
-
-### Data-Driven Decision Enablement
-
-Understand and influence your customers in new ways with propensity-to-act models that illuminate cause-effect relationships
-
-## Our Services
-
-#### Data Cleansing & Analysis
-
-#### Modeling  & Programming
-
-#### Machine Learning
-
-#### Data Visualization
-
-#### Analytics
-
-## Compliant with Security Standards
-
-## Examples of Our Offerings
-
-### Advanced Deeper interactive understanding of utility implementation program operations
-
-### Pro Portfolio level insight of participating and non-participating customers to drive strategic actionability
-
-### Elite
-
-##KDJF
+Currently we cover the smart city, martitime, oil & gas, energy domain.
