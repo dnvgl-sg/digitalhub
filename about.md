@@ -19,4 +19,4 @@ DNV GL is focusing on the power of digitalization combined with expertise and ex
 
 Internet of Things (IoT) plays a key role in our day to live, we focus on the connectivity of the things in the world. DNV GL has deep and skillful know-hows and experiences in operational technologies in Maritime, Energy, Oil & Gas and Smart City industries for about 150 years. And by adding information technology based on our team members' strengths regarding software development and data analytics, we provide the best consulting service and digital solution applications. 
 
-![Our Competence](DS_Singapore_OurCompetence.png)
+![Our Competence](assets/themes/dnvgl/img/DS_Singapore_OurCompetence.png)
