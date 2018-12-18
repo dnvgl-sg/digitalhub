@@ -5,7 +5,14 @@ title: About us
 
 Digital Solutions is a leading and trusted provider of digital solutions, data analytics and platform services. We are recognized for helping our customers to succeed through digitalization and to manage business critical activities in a safe, responsible, and cost efficient manner. Digital solutions will strengthen the impact of DNV GL and establish new growth positions. 
 
-To see more information about DNV GL, please visit https://www.dnvgl.sg/. 
+To see more information about DNV GL, please visit [here](https://www.dnvgl.sg/). 
+
+<p align = 'center'> 
+<img src = "assets/themes/dnvgl/img/DigitalSolutionsSingapore.png" width = "700">
+</p>
+<p align = 'center'> 
+[Organization view of Digital Solutions Singapore] 
+</p>
 
 ### What is DNV GL Digital Hub Singapore? 
 
@@ -19,4 +26,9 @@ DNV GL is focusing on the power of digitalization combined with expertise and ex
 
 Internet of Things (IoT) plays a key role in our day to live, we focus on the connectivity of the things in the world. DNV GL has deep and skillful know-hows and experiences in operational technologies in Maritime, Energy, Oil & Gas and Smart City industries for about 150 years. And by adding information technology based on our team members' strengths regarding software development and data analytics, we provide the best consulting service and digital solution applications. 
 
-![Our Competence](assets/themes/dnvgl/img/DS_Singapore_OurCompetence.png)
+<p align = 'center'> 
+<img src = "assets/themes/dnvgl/img/DS_Singapore_OurCompetence.png" width = "700">
+</p>
+<p align = 'center'> 
+[Competence of Digital Hub Singpaore - Digital Solutions Singapore] 
+</p>
