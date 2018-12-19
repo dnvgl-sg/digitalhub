@@ -8,7 +8,7 @@ Digital Solutions Development team has implemented a smart building management s
 
 You can see some parts of digitalized dashboard and a conceptual digital twin technology with automatic alarming for maintenance. You can see the simulated 13 elevators in 3D in below link and it is synchronized with the dashboard in real time. 
 
-- [__Lift 3D simulation__](https://dnvglsg.github.io/digitalhub/pages/lift3d)
+- [__Lift 3D simulation__ (if it is not opend properly, please check the insecure content blocker.)](https://dnvgl-sg.github.io/digitalhub/pages/lift3d)
 <p align = 'center'> 
 <video id="lift-digitaltwin" class="video-js vjs-default-skin" controls
 preload="auto" width="683" height="384" poster="assets/themes/dnvgl/img/lift_digitaltwin.JPG"
