@@ -5,7 +5,7 @@ title: About us
 
 Digital Solutions is a leading and trusted provider of digital solutions, data analytics and platform services. We are recognized for helping our customers to succeed through digitalization and to manage business critical activities in a safe, responsible, and cost efficient manner. Digital solutions will strengthen the impact of DNV GL and establish new growth positions. 
 
-To see more information about DNV GL, please visit [here](https://www.dnvgl.sg/). 
+To see more information about DNV GL, please visit [__here__](https://www.dnvgl.sg/). 
 
 <p align = 'center'> 
 <img src = "assets/themes/dnvgl/img/DigitalSolutionsSingapore.png" width = "700">

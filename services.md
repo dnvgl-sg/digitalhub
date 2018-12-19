@@ -17,7 +17,15 @@ Data analytics is the key part of data ecosystem, which bring the value from the
 The team can not only help the customers develop data analytics solutions, but can also do prototype to verify hypothesis to make it quick and cheap, and also provide consulting services.
 
 ### Data platform
-Veracity, data platform, connect players, onboarding
+A platform is a plug-and-play business model that allows multiple participants (producers and consumers) to connect to it, interact with each other and create and exchange value. Veracity, DNV GL's data platform, has three main components:
+- Data container is where an asset owern can securely ingest, store and share his/her data; for example streamed data from a ship, wind turbine, rig, etc.
+- Marketplace holds applications, software services and data sets that can be accessed or purchased by users on the platform
+- Developer’s toolbox and developer community is where data scientists, developers, programmers (in the customer DNV GL or third party organization; depending on who the asset owner chooses to share data with) can turn data into insights, value adding applications or even new business model innovations.
+
+Veracity is both a market place and data platform that enables digital innovation and collaboration. 
+Digital applications and solutions, and especially secure sharing and combination of data and insights between stakeholders, holds a great potential to unlock value for assets owners and reduce friction in the interaction between the asset owner and their stakeholders. Veracity creates an ecosystem, where value can be created between providers and consumers of data and services, and where developers and data scientists can be connected to further enrich the data. 
+
+For more information about DNV GL's Veracity platform, [__click here.__](https://www.veracity.com/)
 
 ### Data management & assessment
 Data management, data quality, data maturity level assessment. Consulting
