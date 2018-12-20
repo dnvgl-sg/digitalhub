@@ -41,8 +41,7 @@ The platform technology is providing an ecosystem for both producers and consume
 Our team will provide the best consulting service with regard to the IoT platform technology and support you to have the right IoT platform for the business. 
 
 ### Dashboard UX Design
-
-
+User experience design is a process of designing products to improve the users' satisfaction in use. As a digitalization influence on all kinds of industries, all the data is necessarily be visualized and controlled through various ways like web, mobile apps and any kinds of visual application systems. We provide the most optimized UX design for your products and your business by doing research on your business area and find the best approach of the data visualization and user interaction.
 
 ---
 
