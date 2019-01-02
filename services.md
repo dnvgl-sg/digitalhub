@@ -69,10 +69,10 @@ Digital hub Singapore completes projects for smart lift, energy consumption dash
 
 You can find more details from the showcase tab.
 
-### Climate Change
+### **Climate Change**
 Cities of today are driven by the megatrends of urbanization, population growth, digitalization and climate change. As a consequence, cities face major challenges of increased concentration, congestion, pollution and vulnerability, while at the same time, thriving to accommodate citizens and their needs. As such, the successful cities of tomorrow need to provide accessibility, reliability, efficiency, safety, security and sustainability. At the same time, cities are vulnerable to natural disasters, affecting hundreds of millions of people every year – resulting in serious disruptions of a functioning community or society. With this in mind, DNV GL has developed digital platform solutions, providing risk management preparedness to extreme weather events and climate change.
 <p align = 'center'> 
-<img src = "assets/themes/dnvgl/img/CEP_MAP.png" width = "700">
+<img src = "assets/themes/dnvgl/img/CEP_MAP.PNG" width = "700">
 </p>
 <p align = 'center'> 
 [Capacity Emergency and Post-emergency Map] 
