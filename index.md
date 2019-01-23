@@ -5,12 +5,8 @@ tagline: Digital Hub Singapore with GitHub Pages
 description: Digital Hub Singapore
 ---
 
-Data is new currency for business. 
+Data is new currency for business, and DNV GL Digital Hub Singapore can help you unlock data value.
 
-DNV GL Digital Hub Singapore can help you to get business insights from the data.
+We are able to provide data aquisition, profiling, management, analytics and visulization services which are the key activities to bring value from data. 
 
-In order to get value from data, proper data aquisition, profiling, management, analytics and visulization will be needed. 
-
-DNV GL Digital Hub Singapore can help on these areas. 
-
-Currently we cover the smart city, martitime, oil & gas, energy domain.
+Currently our focus areas cover the Smart City, Martitime, Oil & Gas, Energy industry domains.
