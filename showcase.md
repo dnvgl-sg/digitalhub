@@ -26,18 +26,31 @@ The allocated sensors on the infrastructure, in this case, elevators, are linked
 <p align = 'center'> 
 [Smart Lift - Digital Twin Concept] 
 </p>
+
 ### Customer Index Report
-Text, charts and videos
+CIR solution provides motivating information to customers to get them to complete more energy savings projects. 
+By helping customer:
+- Understand how they compare to similar customers
+- What their consumption tells us about potential savings opportunities
+- What similar customers have completed that might be related capital measure/technologies they should consider adopting
 
-### Sedimentation
-Text and videos
+All the data is visulized through a very nice dashboard, see following.
+<p align = 'center'> 
+<img src = "assets/themes/dnvgl/img/cir.png" width = "700">
+</p>
+<p align = 'center'> 
+[Customer Index Report - Dashboard] 
+</p>
 
-### Zero Emission Tool
-Text and videos
+[//]: <> (### Sedimentation)
+[//]: <> (Text and videos)
+
+[//]: <> (### Zero Emission Tool)
+[//]: <> (Text and videos)
 
 ### Building Management
 
-Digital Solutions Development team is also doing some innovative projects internally, and one is a monitoring system of meeting rooms in DNV GL Singapore building. By deploying temperature, humidity and proximity sensors in each meeting room, the employees and the building managers can see the status of the meeting rooms in real time.  
+Digital Solutions Development team is also doing some innovative projects internally, and one is a monitoring system of meeting rooms usage and environment in DNV GL Singapore building. By deploying temperature, humidity and proximity sensors in each meeting room, the employees and the building managers can see the status of the meeting rooms in real time.  
 <p align = 'center'> 
 <img src = "assets/themes/dnvgl/img/buildingmanage_dashboard.JPG" width = "800">
 </p>

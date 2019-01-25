@@ -7,4 +7,4 @@ title: Contact us
 118227 Singapore
 
 ### Mail address
-digitalhubsingapore@dnvgl.com
+[digitalhubsingapore@dnvgl.com](mailto:digitalhubsingapore@dnvgl.com)
