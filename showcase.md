@@ -58,3 +58,14 @@ Digital Solutions Development team is also doing some innovative projects intern
 [Building Management - Meeting Room Monitoring Dashboard] 
 </p>
 This project is still ongoing, and it will be synched with the legacy building management system. Additional functions will be developed soon and it will ease to customize the office environment, according to the users' survey results and elaborate the building management system in energy saving perspective.
+
+<p align = 'center'> 
+<video id="lift-digitaltwin" class="video-js vjs-default-skin" controls
+preload="auto" width="683" height="384" poster="assets/themes/dnvgl/img/OfficeEnviro.JPG"
+data-setup="{}">
+<source src="assets/themes/dnvgl/img/OfficeEnviro.mp4" type='video/mp4'>
+</video>
+</p>
+<p align = 'center'> 
+[Building Management - Office Environment Detector Dashboard] 
+</p>
