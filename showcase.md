@@ -52,20 +52,29 @@ All the data is visulized through a very nice dashboard, see following.
 
 Digital Solutions Development team is also doing some innovative projects internally, and one is a monitoring system of meeting rooms usage and environment in DNV GL Singapore building. By deploying temperature, humidity and proximity sensors in each meeting room, the employees and the building managers can see the status of the meeting rooms in real time.  
 <p align = 'center'> 
-<img src = "assets/themes/dnvgl/img/buildingmanage_dashboard.JPG" width = "800">
+<img src = "assets/themes/dnvgl/img/building_architecture.png" width = "800">
 </p>
 <p align = 'center'> 
-[Building Management - Meeting Room Monitoring Dashboard] 
+[Building Management -  Office Environment Detector System Architecture] 
 </p>
 This project is still ongoing, and it will be synched with the legacy building management system. Additional functions will be developed soon and it will ease to customize the office environment, according to the users' survey results and elaborate the building management system in energy saving perspective.
+
+<p align = 'center'> 
+<img src = "assets/themes/dnvgl/img/building_rpi.png" width = "600">
+</p>
+<p align = 'center'> 
+[Building Management - Edge device with sensors] 
+</p>
+
+A raspberry pi is set as a gateway and it collects the sensor data from each sensor and pre-process it before delivering to the cloud. For the detailed information, please contact us. 
 
 <p align = 'center'> 
 <video id="building-management" class="video-js vjs-default-skin" controls
 preload="auto" width="683" height="384" poster="assets/themes/dnvgl/img/OfficeEnviro.jpg"
 data-setup="{}">
-<source src="assets/themes/dnvgl/img/OfficeEnviro.mp4" type='video/mp4'>
+<source src="assets/themes/dnvgl/img/OfficeEnviro_Subtitles.mp4" type='video/mp4'>
 </video>
 </p>
 <p align = 'center'> 
-[Building Management - Office Environment Detector Dashboard] 
+[Building Management - Office Environment Detector Demo] 
 </p>
